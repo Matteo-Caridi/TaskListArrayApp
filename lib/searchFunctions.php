@@ -1,11 +1,13 @@
 <?php
+
 /**
  * Funzione di ordine superiore funzione che restituisce una funzione
  * Programmazione Funzionale - dichiarativo 
  */
-function searchText(string $searchText) {
-    return function ($item) use ($searchText){
-        return (strpos($item,  $searchText)!==false);
+function searchText($searchText)
+{
+    return function ($taskItem) use ($searchText) {
+        return strpos($taskItem['taskName'],  $searchText) !== false;
     };
 }
 
@@ -14,10 +16,24 @@ function searchText(string $searchText) {
  * (progress|done|todo)
  * @return callable La funzione che verrà utilizzata da array_filter
  */
-function searchStatus(string $status) : callable {
-    return function ($taskItem) use ($status){
-        return strpos($taskItem, $status)!==false;
+function searchStatus(string $status)
+{
+    return function ($taskItem) use ($status) {
+        if ($status !== 'all') {
+            return strpos($taskItem['status'], $status) !== false;
+        } else {
+            return $taskItem;
+        }
     };
-} 
+}
 
-
+function getColor($status)
+{
+    if ($status === 'todo') {
+        return "danger";
+    } elseif ($status === 'progress') {
+        return "primary";
+    } elseif ($status === 'done') {
+        return "secondary";
+    }
+}

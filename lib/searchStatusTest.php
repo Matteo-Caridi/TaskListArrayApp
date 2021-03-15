@@ -1,6 +1,6 @@
 <?php
 require "./vendor/testTools/testTool.php";
-require "C:\laragon\www\TaskListArrayApp\lib\searchFunctions.php";
+require "./lib/searchFunctions.php";
 
 $testCases = [
     [
