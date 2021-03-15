@@ -3,9 +3,9 @@
  * Funzione di ordine superiore funzione che restituisce una funzione
  * Programmazione Funzionale - dichiarativo 
  */
-function searchText($searchText) {
-    return function ($taskItem) use ($searchText){
-        return strpos($taskItem,  $searchText)!==false;
+function searchText(string $searchText) {
+    return function ($item) use ($searchText){
+        return (strpos($item,  $searchText)!==false);
     };
 }
 

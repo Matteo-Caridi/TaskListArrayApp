@@ -1,16 +1,15 @@
 <?php
 
 //import file php
-require 'lib\JSONReader.php';
-$elenco = JSONReader('./task');
+// require 'lib\JSONReader.php';
+// $elenco = JSONReader('./task');
 require 'C:\laragon\www\TaskListArrayApp\lib\searchStatusTest.php';
+require 'C:\laragon\www\TaskListArrayApp\lib\searchTextTest.php';
 
 
 
 //lettura file
 $task
-
-
 
 ?>
 
