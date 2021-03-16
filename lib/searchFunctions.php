@@ -11,7 +11,7 @@ function searchText($searchText)
         if ($result !== ""){
             return stripos($taskItem['taskName'],  $result) !== false;
         }else{
-            return count($taskItem);
+            return $taskItem;
         }
     };
 }
@@ -24,7 +24,7 @@ function searchText($searchText)
 function searchStatus(string $status)
 {
     return function ($taskItem) use ($status) {
-        if ($status !== 'all') {
+        if (($status !== 'all')&&($status!=='')) {
             return strpos($taskItem['status'], $status) !== false;
         } else {
             return $taskItem;
