@@ -7,7 +7,11 @@
 function searchText($searchText)
 {
     return function ($taskItem) use ($searchText) {
-        return strpos($taskItem['taskName'],  $searchText) !== false;
+        $cambionome = trim(filter_var($searchText, FILTER_SANITIZE_STRING));
+        if ($cambionome !== ""){
+            return stripos($taskItem['taskName'],  $cambionome) !== false;
+        }else{
+            return count($taskItem);
     };
 }
 
