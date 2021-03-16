@@ -11,7 +11,7 @@ function searchText($searchText)
         if ($result !== ""){
             return stripos($taskItem['taskName'],  $result) !== false;
         }else{
-            return $taskItem;
+            return true;
         }
     };
 }
@@ -27,7 +27,7 @@ function searchStatus(string $status)
         if (($status !== 'all')&&($status!=='')) {
             return strpos($taskItem['status'], $status) !== false;
         } else {
-            return $taskItem;
+            return true;
         }
     };
 }
