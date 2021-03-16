@@ -7,7 +7,12 @@
 function searchText($searchText)
 {
     return function ($taskItem) use ($searchText) {
-        return strpos($taskItem['taskName'],  $searchText) !== false;
+        $result = trim(filter_var($searchText, FILTER_SANITIZE_STRING));
+        if ($result !== ""){
+            return stripos($taskItem['taskName'],  $result) !== false;
+        }else{
+            return count($taskItem);
+        }
     };
 }
 
