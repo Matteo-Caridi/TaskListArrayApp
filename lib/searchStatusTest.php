@@ -49,4 +49,5 @@ foreach ($testCases as $testCase) {
     
     assertEquals('array', gettype($actual),'il risultato è un ');
     assertEquals($expectedCount, count($actual), $description);
+    // print_r($actual);
 }
