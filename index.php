@@ -3,7 +3,7 @@
 //import file php
 require './lib/JSONReader.php';
 require './lib/searchFunctions.php';
-$taskList = JSONReader('dataset/TaskList.json');
+$taskList = JSONReader('./dataset/TaskList.json');
 
 
 if (isset($_GET['searchText']) && trim($_GET['searchText']) !== '') {
