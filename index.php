@@ -11,7 +11,7 @@ if (isset($_GET['searchText']) && trim($_GET['searchText']) !== '') {
     $taskList = array_filter($taskList, searchText($searchText));
 }
 
-if ((isset($_GET['status'])) && (isset($_GET['status']) !== '')) {
+if ((isset($_GET['status']))) {
     $status = $_GET['status'];
     $taskList = array_filter($taskList, searchStatus($status));
 }
