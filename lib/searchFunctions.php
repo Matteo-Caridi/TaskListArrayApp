@@ -8,9 +8,9 @@ function searchText($searchText)
 {
     return function ($taskItem) use ($searchText) {
         $result = trim(filter_var($searchText, FILTER_SANITIZE_STRING));
-        if ($result !== ""){
+        if ($result !== "") {
             return stripos($taskItem['taskName'],  $result) !== false;
-        }else{
+        } else {
             return true;
         }
     };
@@ -24,7 +24,7 @@ function searchText($searchText)
 function searchStatus(string $status)
 {
     return function ($taskItem) use ($status) {
-        if (($status !== 'all')&&($status!=='')) {
+        if (($status !== 'all') && ($status !== '')) {
             return strpos($taskItem['status'], $status) !== false;
         } else {
             return true;
